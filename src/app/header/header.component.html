@@ -1,0 +1,80 @@
+<div class="font-[Poppins] bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee]">
+  <header class="bg-white" style="height: 50px; margin-top: 10px; border: none;">
+    <nav class="flex justify-between font-sans items-center w-[92%] mx-auto">
+      <!-- Logo -->
+      <div>
+        <img
+          class="w-24 cursor-pointer"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr6c7fFevyEoR4DEBzz1i8nMPsKxw-zaWtfw&s"
+          alt="Logo"
+        />
+      </div>
+
+      <!-- Search Bar -->
+      <div>
+        <div class="flex items-center">
+          🔍
+          <input type="text" placeholder="Search here..." class="p-2 rounded border border-gray-300">
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex flex-col md:flex-row items-center px-1"
+           [ngClass]="{ 'top-[9%]': isMenuOpen }">
+        <ul class="flex flex-col md:flex-row md:items-center md:gap-[4vw] gap-8">
+          <!-- Home Dropdown -->
+          <li class="relative">
+            <div class="flex items-center cursor-pointer" (click)="toggleDropdown('products')">
+              <a class="hover:text-green-500">Home</a>
+              <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            <ul class="absolute hidden flex-col bg-white shadow-lg mt-2 p-3 rounded-md w-40" [ngClass]="{'block': dropdowns.products, 'hidden': !dropdowns.products}">
+              <li><a href="#" class="hover:text-green-500">Home 1</a></li>
+              <li><a href="#" class="hover:text-green-500">Home 2</a></li>
+              <li><a href="#" class="hover:text-green-500">Home 3</a></li>
+            </ul>
+          </li>
+
+          <!-- Pages Dropdown -->
+          <li class="relative">
+            <div class="flex items-center cursor-pointer" (click)="toggleDropdown('solutions')">
+              <a class="hover:text-green-500">Pages</a>
+              <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            <ul class="absolute hidden flex-col bg-white shadow-lg mt-2 p-3 rounded-md w-40" [ngClass]="{'block': dropdowns.solutions, 'hidden': !dropdowns.solutions}">
+              <li><a href="#" class="hover:text-green-500">Page 1</a></li>
+              <li><a href="#" class="hover:text-green-500">Page 2</a></li>
+              <li><a href="#" class="hover:text-green-500">Page 3</a></li>
+            </ul>
+          </li>
+
+          <!-- Other Links -->
+          <li><a class="hover:text-green-500" href="#">Insurances</a></li>
+          <li><a class="hover:text-green-500" href="#">Blog</a></li>
+          <li><a class="hover:text-green-500" href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="hidden lg:block">
+        📞 +(111) 65 458 856
+      </div>
+      <!-- Get a Quote Button -->
+      <div class="hidden lg:block">
+        <button class="bg-[#008080] text-white px-5 py-2 rounded-md hover:bg-[#1a5a47]">
+          Get a Quote
+        </button>
+      </div>
+      <!-- Mobile Menu Icon -->
+      <div class=" z-10 relative" (click)="onToggleMenu()" style="margin-right: 10px;">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </div>
+    </nav>
+  </header>
+</div>
